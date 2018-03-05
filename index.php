@@ -76,4 +76,107 @@ var_dump(isset($curso)?"No es nulo y su valor es: $curso":'curso es  nulo');
 //Variable fusion de null
 var_dump($curso ?? 'es nulo');
 
+/*php class 03 */
+
+$polos= 0;
+while($polos<=10){
+echo "Tenemos $polos polos. \n ";
+$polos++;
+}
+
+for($i=1;$i<=10;$i++)
+{
+  echo "Bucle for : Tenemos $polos polos.\t . $i . \n ";
+  $polos++;
+  
+}
+$polos= ['css','js','html','php'];
+
+foreach($polos as $polo ){
+    echo "{$polo}\n";
+
+}
+/**
+ * control:  Break y continue
+ */
+foreach($polos as $indice => $valor ):
+  
+  echo "La clave [$indice]  tiene  como valor : {$valor}\n";
+  break;
+endforeach;
+
+
+for($i=1;$i<=10;$i++)
+{
+  if($i%2==0):
+    continue;
+echo $i ."  es numero par\n";
+endif;
+
+echo $i ."  es numero impar\n";
+}
+
+/**
+ * FUNCIONES
+ * 
+ */
+
+function saluda(){
+echo  "Hi UNC";
+
+}
+function vid($go){
+  return  "Hi return ".$go."\n" ;
+  
+  }
+saluda();
+//imprime  caracter  de  fin de  linea
+echo PHP_EOL;
+ echo vid("Hever");
+
+ 
+function bienvenido(){
+//array co   todos  los  parametros
+  $nombres= func_get_args();
+
+  foreach($nombres as $nombre){
+ echo "Bienvenido,{$nombre}.\n";
+  }
+
+}
+
+bienvenido("hever","noe","muñoz","huaman");
+
+/**
+ * Especificando un array
+ */
+function saludando (array $persona){
+
+  foreach($persona as $p1 ):
+echo "Hola , {$p1}".PHP_EOL;
+  endforeach;
+
+}
+
+saludando(["Diana","cameli","Mary","Tania","Lizeth"]);
+
+/**
+ * Clossure: funciones  anonimas o q  no tienen  nombre
+ */
+
+ $closs=function(){
+ echo "soy  una  function anonima".PHP_EOL;
+};
+
+echo $closs();
+
+$aritmetica=function ($c1,$c2,$c3){
+ return $c1($c2,$c3).PHP_EOL;
+};
+
+$suma=function($n1,$n2){
+return $n1+$n2;
+};
+ echo "RESULTADO  DEL CLOSURE: " .$aritmetica($suma,4,5);
+
 ?>
