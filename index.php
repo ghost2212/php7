@@ -1,4 +1,4 @@
-<?php  
+<?php  declare(strict_types = 1);
 
 
 echo "hola mundo";
@@ -123,8 +123,8 @@ echo $i ."  es numero impar\n";
 
 function saluda(){
 echo  "Hi UNC";
-
 }
+
 function vid($go){
   return  "Hi return ".$go."\n" ;
   
@@ -178,5 +178,27 @@ $suma=function($n1,$n2){
 return $n1+$n2;
 };
  echo "RESULTADO  DEL CLOSURE: " .$aritmetica($suma,4,5);
+
+
+
+ /**
+  * Clase 4   :  Includes y  clases
+  * 
+  */
+
+ $number = 15;
+
+function retornando(int $x , int $y ):int{
+
+  //global $number;
+  //return  $x+$y+$number;
+  return  $x+$y;
+}
+
+
+echo retornando(10,15);
+
+
+
 
 ?>
